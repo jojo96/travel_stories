@@ -15,6 +15,30 @@ const images = [
     original: `${process.env.PUBLIC_URL}/images/Jordan/3.jpeg`,
     thumbnail: `${process.env.PUBLIC_URL}/images/Jordan/3.jpeg`,
   },
+  {
+    original: `${process.env.PUBLIC_URL}/images/Jordan/4.jpeg`,
+    thumbnail: `${process.env.PUBLIC_URL}/images/Jordan/4.jpeg`,
+  },
+  {
+    original: `${process.env.PUBLIC_URL}/images/Jordan/5.jpeg`,
+    thumbnail: `${process.env.PUBLIC_URL}/images/Jordan/5.jpeg`,
+  },
+  {
+    original: `${process.env.PUBLIC_URL}/images/Jordan/6.jpeg`,
+    thumbnail: `${process.env.PUBLIC_URL}/images/Jordan/6.jpeg`,
+  },
+  {
+    original: `${process.env.PUBLIC_URL}/images/Jordan/7.jpeg`,
+    thumbnail: `${process.env.PUBLIC_URL}/images/Jordan/7.jpeg`,
+  },
+  {
+    original: `${process.env.PUBLIC_URL}/images/Jordan/8.jpeg`,
+    thumbnail: `${process.env.PUBLIC_URL}/images/Jordan/8.jpeg`,
+  },
+  {
+    original: `${process.env.PUBLIC_URL}/images/Jordan/9.jpeg`,
+    thumbnail: `${process.env.PUBLIC_URL}/images/Jordan/9.jpeg`,
+  },
 ];
 
 const cardStyle = {
