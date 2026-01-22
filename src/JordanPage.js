@@ -108,25 +108,36 @@ const JordanPage = () => (
 	 
 	  
      
-        <p>
-          I flew from Belgium (Charleroi Airport) with Ryanair. The arrival
-          experience was smooth and the airport was modern and well-organized.
-        </p>
-        <p>
-          I had already purchased the <strong>Jordan Pass</strong> (≈ €100),
-          which made immigration very easy and saved money on attractions.
-        </p>
-        <p>
-          I exchanged €10 for around <strong>7 JD</strong> and bought an
-          <strong> Orange SIM</strong> (10 JD for 30GB + 20 mins).
-        </p>
-        <p>
-          💡 Tip: Don’t accept the first offer — walk around and compare.
-        </p>
-        <p>
-          I took the <strong>Sariyah Express</strong> bus (3.3 JD) to Amman
-          North Station. A Careem ride to the center cost only 2 JD.
-        </p>
+        <div className="travel-section">
+
+  <p>
+    I flew from Belgium (Charleroi Airport) with Ryanair. The arrival
+    experience was smooth and the airport was modern and well-organized.
+  </p>
+
+  <p>
+    I had already purchased the <strong>Jordan Pass</strong> (≈ €100),
+    which made immigration very easy and saved money on attractions.
+  </p>
+
+  <p>
+    I exchanged €10 for around <strong>7 JD</strong> and bought an
+    <strong> Orange SIM</strong> (10 JD for 30GB + 20 mins).
+  </p>
+
+  <p className="note">
+    💡 Tip: Don’t accept the first offer — walk around and compare.
+  </p>
+
+  <p>
+    I took the <strong>Sariyah Express</strong> bus (3.3 JD) to Amman
+    North Station. A Careem ride to the center cost only 2 JD.
+  </p>
+
+</div>
+
+
+
       </div>
 
       {/* Day 1 */}
