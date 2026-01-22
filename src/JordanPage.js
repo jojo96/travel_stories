@@ -113,11 +113,9 @@ const JordanPage = () => (
   <p>
     I flew from Belgium (Charleroi Airport) with Ryanair. The arrival
     experience was smooth and the airport was modern and well-organized.
-  </p>
-
-  <p>
-    I had already purchased the <strong>Jordan Pass</strong> (≈ €100),
-    which made immigration very easy and saved money on attractions.
+ 
+    I had already purchased the <strong>Jordan Pass</strong> (≈ €100), and would recomment it.
+    It makes immigration easy, saves money on attractions and time.
   </p>
 
   <p>
@@ -126,7 +124,7 @@ const JordanPage = () => (
   </p>
 
   <p className="note">
-    💡 Tip: Don’t accept the first offer — walk around and compare.
+    💡 Tip: Don’t accept the first offer for the sim — walk around and compare. Also, exchange rates are better in the city.
   </p>
 
   <p>
@@ -417,6 +415,82 @@ const JordanPage = () => (
 
        
       </div>
+	  
+	  
+	  
+	  <div className="travel-section">
+
+  <h2 className="section-title">🗺️ 4-Day Jordan Travel Itinerary</h2>
+
+  {/* Day 1 */}
+  <div className="travel-card">
+    <h3>Day 1 — Arrival & Exploring Amman</h3>
+
+    <ul>
+      <li>Arrival at Queen Alia International Airport</li>
+      <li>Immigration made easy with the <strong>Jordan Pass</strong></li>
+      <li>SIM card purchase (Orange – 30GB)</li>
+      <li>Bus to Amman (Sariyah Express)</li>
+      <li>Check-in</li>
+      <li>Visit <strong>Amman Citadel</strong> & Temple of Hercules</li>
+      <li>Explore local shops & buy souvenirs</li>
+      <li>Street food dinner (Knafeh, Arais, Salep)</li>
+    </ul>
+  </div>
+
+  {/* Day 2 */}
+  <div className="travel-card">
+    <h3>Day 2 — Journey to Petra</h3>
+
+    <ul>
+      <li>Early morning public bus to Petra (~8 JD)</li>
+      <li>Scenic ride through the desert</li>
+      <li>Arrival near Petra entrance</li>
+	  <li>Optional Petra at night</li>
+      <li>Overnight stay</li>
+    </ul>
+  </div>
+
+  {/* Day 3 */}
+  <div className="travel-card">
+    <h3>Day 3 — Exploring Petra</h3>
+
+    <ul>
+      <li>Full day inside Petra using the Jordan Pass</li>
+      <li>Visit the museum and ancient tombs</li>
+      <li>Hike through the main trail or others</li>
+      <li>Optional back entrance hike to the Monastery</li>
+      <li>Enjoy sunset views over Petra</li>
+      <li>Evening return and rest</li>
+    </ul>
+
+    <p className="note">
+      💡 Tip: Petra is huge — wear good shoes and carry plenty of water.
+    </p>
+  </div>
+
+  {/* Day 4 */}
+  <div className="travel-card">
+    <h3>Day 4 — Dead Sea Experience</h3>
+
+    <ul>
+      <li>Jett bus from Amman (15 JD round trip)</li>
+      <li>Avoid resort pressure — public access is possible</li>
+      <li>Walk along the shore and float in the Dead Sea</li>
+      <li>Visit the salt beach</li>
+      <li>Hike for panoramic views</li>
+      <li>Return to Amman in the evening</li>
+    </ul>
+
+    <p className="note">
+      💧 Carry water and snacks — facilities are limited.
+    </p>
+  </div>
+
+</div>
+
+	  
+	  
     </div>
   </div>
 );
