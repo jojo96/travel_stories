@@ -155,7 +155,7 @@ const JordanPage = () => (
 
   <h4 className="section-title">🏛️ Amman Citadel</h4>
   <p>
-    The Citadel was stunning — great views and the famous
+    The Citadel was amazing — great views and the famous
     <strong> Temple of Hercules</strong>. I spent a long time walking
     around and exploring the history. Also check this out:{" "}
     <a
@@ -176,8 +176,8 @@ const JordanPage = () => (
 
   <p>
     I reached the Roman Amphitheater after 6 PM, so it was closed.
-    However, the shop owner gave me a “Top 40 things to do in Amman”
-    list — such a kind gesture.
+    However, the lady at the shop gave me a “Top 40 things to do in Amman”
+    list — which was super nice.
   </p>
 
   <h4 className="section-title">🍽️ Street Food</h4>

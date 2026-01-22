@@ -68,7 +68,7 @@ export default function App() {
           <img src={`${process.env.PUBLIC_URL}/images/countries/europe.png`} alt="Europe Map" className="w-20 mr-5" />
           <div>
             <h3 className="text-lg font-semibold">Europe</h3>
-            <p>40 / 44 countries visited</p>
+            <p>43 countries visited</p>
           </div>
         </div>
 
@@ -77,7 +77,16 @@ export default function App() {
           <img src={`${process.env.PUBLIC_URL}/images/countries/asia.jpg`} alt="Asia Map" className="w-20 mr-5" />
           <div>
             <h3 className="text-lg font-semibold">Asia</h3>
-            <p>6 / 48 countries visited</p>
+            <p>13 countries visited</p>
+          </div>
+        </div>
+		
+		{/* Africa Statistic */}
+        <div className="flex items-center mt-1 mb-2 bg-white p-4 rounded-lg shadow">
+          <img src={`${process.env.PUBLIC_URL}/images/countries/africa.jpg`} alt="Asia Map" className="w-20 mr-5" />
+          <div>
+            <h3 className="text-lg font-semibold">Africa</h3>
+            <p>1 visited</p>
           </div>
         </div>
 
@@ -87,7 +96,7 @@ export default function App() {
             value={selectedOption}
             onChange={setSelectedOption}
             options={options}
-            placeholder="Select country to view photo gallery"
+            placeholder="Type country name to view photo gallery"
             className="mb-4"
           />
           {selectedOption && (
