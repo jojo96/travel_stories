@@ -1,6 +1,7 @@
 // JordanPage.js
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
+import "./styles.css";
 
 const images = [
   {
@@ -109,15 +110,15 @@ const JordanPage = () => (
           which made immigration very easy and saved money on attractions.
         </p>
         <p>
-          I exchanged €10 for around <strong>7 JOD</strong> and bought an
+          I exchanged €10 for around <strong>7 JD</strong> and bought an
           <strong> Orange SIM</strong> (10 JOD for 30GB + 20 mins).
         </p>
         <p>
           💡 Tip: Don’t accept the first offer — walk around and compare.
         </p>
         <p>
-          I took the <strong>Saraya Express</strong> bus (3.3 JOD) to Amman
-          North Station. A Careem ride to the center cost only 2 JOD.
+          I took the <strong>Sariyah Express</strong> bus (3.3 JD) to Amman
+          North Station. A Careem ride to the center cost only 2 JD.
         </p>
       </div>
 
@@ -127,14 +128,16 @@ const JordanPage = () => (
 
         <p>
           I stayed at <strong>Castle Star Hostel</strong>, which was cozy,
-          affordable, and perfectly located.
+          affordable, and perfectly located, just next to the Amman Citadel.
         </p>
 
         <h4>🏛️ Amman Citadel</h4>
         <p>
           The Citadel was stunning — great views and the famous
           <strong> Temple of Hercules</strong>. I spent a long time walking
-          around and exploring the history.
+          around and exploring the history. Also check this out: <a href="https://www.atlasobscura.com/places/hand-of-hercules" target="_blank" rel="noopener noreferrer">
+  <strong>Hand of Hercules – Atlas Obscura</strong>
+</a>
         </p>
 
         <h4>🎨 Around the City</h4>
@@ -154,16 +157,40 @@ const JordanPage = () => (
 
         <h4>🍽️ Street Food</h4>
         <ul>
-          <li>Kunafa — 0.9 JD</li>
-          <li>Saleh — 1 JD</li>
-          <li>Arayesh — 1 JD</li>
+          <li>Knafeh — 0.9 JD</li>
+          <li>Salep — 1 JD</li>
+          <li>Arais — 1 JD</li>
           <li>Assorted bread — 1 JD</li>
         </ul>
+		
+		
+
 
         <p>
           💡 Food in Jordan is amazing and very affordable. Exchange money in
           the city for better rates.
         </p>
+		
+		
+		<div className="food-grid">
+  {[
+    { img: "food1.jpeg", caption: "Knafeh" },
+    { img: "food2.jpeg", caption: "Salep" },
+    { img: "food3.jpeg", caption: "Arais" },
+    { img: "food4.jpeg", caption: "Assorted Bread" },
+  ].map((item, i) => (
+    <div key={i} className="food-card">
+      <img
+        src={`${process.env.PUBLIC_URL}/images/Jordan/${item.img}`}
+        alt={item.caption}
+      />
+      <p className="food-caption">{item.caption}</p>
+    </div>
+  ))}
+</div>
+
+
+
       </div>
 
       {/* Day 2 */}
