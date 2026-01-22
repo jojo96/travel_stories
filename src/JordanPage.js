@@ -71,7 +71,7 @@ const JordanPage = () => (
           fontFamily: "Georgia, serif",
         }}
       >
-        Jordan through my lens 🇯🇴
+        Jordan through my lens 
       </h2>
 
       <ImageGallery
@@ -94,13 +94,20 @@ const JordanPage = () => (
         fontFamily: "Georgia, serif",
       }}
     >
-      <h2 style={{ textAlign: "center", marginBottom: "30px" }}>
-        My Travel Notes 🏜️
-      </h2>
+    <h2 className="travel-title">
+  My Travel Notes 🏜️
+</h2>
 
       {/* Arrival */}
       <div style={cardStyle}>
-        <h3>✈️ Arrival in Jordan</h3>
+	  
+	  <div className="travel-card">
+  <h3>✈️ Arrival in Jordan</h3>
+</div>
+     
+	 
+	  
+     
         <p>
           I flew from Belgium (Charleroi Airport) with Ryanair. The arrival
           experience was smooth and the airport was modern and well-organized.
@@ -111,7 +118,7 @@ const JordanPage = () => (
         </p>
         <p>
           I exchanged €10 for around <strong>7 JD</strong> and bought an
-          <strong> Orange SIM</strong> (10 JOD for 30GB + 20 mins).
+          <strong> Orange SIM</strong> (10 JD for 30GB + 20 mins).
         </p>
         <p>
           💡 Tip: Don’t accept the first offer — walk around and compare.
@@ -124,52 +131,61 @@ const JordanPage = () => (
 
       {/* Day 1 */}
       <div style={cardStyle}>
-        <h3>Day 1 — Exploring Amman 🇯🇴</h3>
+	  
+	  <div className="travel-card">
+  <h3>Day 1 — Exploring Amman </h3>
+</div>
+        
 
-        <p>
-          I stayed at <strong>Castle Star Hostel</strong>, which was cozy,
-          affordable, and perfectly located, just next to the Amman Citadel.
-        </p>
+        <div className="travel-section">
 
-        <h4>🏛️ Amman Citadel</h4>
-        <p>
-          The Citadel was stunning — great views and the famous
-          <strong> Temple of Hercules</strong>. I spent a long time walking
-          around and exploring the history. Also check this out: <a href="https://www.atlasobscura.com/places/hand-of-hercules" target="_blank" rel="noopener noreferrer">
-  <strong>Hand of Hercules – Atlas Obscura</strong>
-</a>
-        </p>
+  <p>
+    I stayed at <strong>Castle Star Hostel</strong>, which was cozy,
+    affordable, and perfectly located, just next to the Amman Citadel.
+  </p>
 
-        <h4>🎨 Around the City</h4>
-        <p>
-          I stopped at a small art shop and bought:
-        </p>
-        <ul>
-          <li>Old stamps</li>
-          <li>A beautiful bookmark</li>
-        </ul>
+  <h4 className="section-title">🏛️ Amman Citadel</h4>
+  <p>
+    The Citadel was stunning — great views and the famous
+    <strong> Temple of Hercules</strong>. I spent a long time walking
+    around and exploring the history. Also check this out:{" "}
+    <a
+      href="https://www.atlasobscura.com/places/hand-of-hercules"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <strong>Hand of Hercules – Atlas Obscura</strong>
+    </a>
+  </p>
 
-        <p>
-          I reached the Roman Amphitheater after 6 PM, so it was closed.
-          However, the shop owner gave me a “Top 40 things to do in Amman”
-          list — such a kind gesture.
-        </p>
+  <h4 className="section-title">🎨 Around the City</h4>
+  <p>I stopped at a small art shop and bought:</p>
+  <ul className="clean-list">
+    <li>Old stamps</li>
+    <li>A beautiful bookmark</li>
+  </ul>
 
-        <h4>🍽️ Street Food</h4>
-        <ul>
-          <li>Knafeh — 0.9 JD</li>
-          <li>Salep — 1 JD</li>
-          <li>Arais — 1 JD</li>
-          <li>Assorted bread — 1 JD</li>
-        </ul>
-		
-		
+  <p>
+    I reached the Roman Amphitheater after 6 PM, so it was closed.
+    However, the shop owner gave me a “Top 40 things to do in Amman”
+    list — such a kind gesture.
+  </p>
 
+  <h4 className="section-title">🍽️ Street Food</h4>
+  <ul className="clean-list">
+    <li>Knafeh — 0.9 JD</li>
+    <li>Salep — 1 JD</li>
+    <li>Arais — 1 JD</li>
+    <li>Assorted bread — 1 JD</li>
+  </ul>
 
-        <p>
-          💡 Food in Jordan is amazing and very affordable. Exchange money in
-          the city for better rates.
-        </p>
+  <p className="note">
+    💡 Food in Jordan is amazing and very affordable. Exchange money in
+    the city for better rates.
+  </p>
+
+</div>
+
 		
 		
 		<div className="food-grid">
@@ -195,31 +211,200 @@ const JordanPage = () => (
 
       {/* Day 2 */}
       <div style={cardStyle}>
-        <h3>Day 2 — Journey to Petra 🚍</h3>
-        <p>
-          I took a public bus to Petra for about <strong>8 JD</strong>.
-          Comfortable ride and great views along the way.
-        </p>
-        <p>
-          The bus dropped me close to the entrance, and from there I walked
-          a lot — but every step was worth it.
-        </p>
+	  
+	   <div className="travel-card">
+  <h3>Day 2 — Journey to Petra 🚍 </h3>
+</div>
+        
+        <div className="travel-section">
+  <p>
+    I took a public bus to Petra for about <strong>8 JD</strong>.
+    Comfortable ride and great views along the way.
+  </p>
+
+  <p>
+    The bus dropped me close to the entrance, and from there I walked
+    a lot — but every step was worth it.
+  </p>
+</div>
+
       </div>
 
       {/* Day 3 */}
       <div style={cardStyle}>
-        <h3>Day 3 — Petra & Return 🏜️</h3>
-        <p>
-          Petra was surreal. Walking through the Siq and seeing the Treasury
-          for the first time was unforgettable.
+       
+		
+		  <div className="travel-card">
+  <h3>Day 3 — Petra & Return 🏜️</h3>
+</div>
+        
+<div className="travel-section">
+
+  <p>
+    Petra was surreal. Walking through the Siq and seeing the Treasury
+    for the first time was unforgettable. I stayed at the Petra Musa Rural House.
+    I had my own room for 8.6 JD and the host was absolutely amazing.
+    Definitely recommend.
+    {" "}
+    <a
+      href="https://www.booking.com/hotel/jo/musa-rural-house.en-gb.html?aid=356980"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <strong>View Petra Musa Rural House on Booking.com</strong>
+    </a>
+  </p>
+
+  <p>
+    Ok the story of Petra now. The Jordan pass is handy and depending on the
+    number of days you are there get the best option (
+    <a
+      href="https://www.jordanpass.jo/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <strong>Jordan Pass link</strong>
+    </a>
+    ). You get a ticket on the first day and you can use it to go everywhere
+    inside the Petra complex. There is a museum at the starting point. It gives
+    you amazing details about the Nabateans.
+  </p>
+
+  <p>
+    I took the main entrance and walked all the way. But there is also a
+    backside entrance if you want a smaller walk to the monastery (one of the
+    attractions). I would suggest spending at least 2 days there, but if you
+    have less time, one day is also okay — just expect a lot of walking.
+  </p>
+
+  <p>
+    On the way back, a kind stranger gave me a lift toward Amman — another
+    reminder of how welcoming people in Jordan are.
+  </p>
+
+  <p>
+    🚕 Uber is cheap and very convenient in Jordan.
+  </p>
+
+</div>
+
+   <p>
+ <div
+  style={{
+    marginTop: "40px",
+    padding: "25px",
+    background: "#f9f9f9",
+    borderRadius: "12px",
+    boxShadow: "0 4px 10px rgba(0,0,0,0.05)",
+    fontFamily: "Georgia, serif",
+  }}
+>
+  <h3 style={{ textAlign: "center", marginBottom: "20px" }}>
+     Tips for Traveling in Petra
+  </h3>
+
+  <ul style={{ lineHeight: "1.8", fontSize: "1.05rem" }}>
+    <li>
+      🎟️ <strong>Get the Jordan Pass</strong> — it saves money on the visa and
+      includes entry to major attractions like Petra.
+    </li>
+
+    <li>
+      💧 <strong>Carry plenty of water</strong> — distances can be long and
+      walking under the sun can be exhausting.
+    </li>
+
+    <li>
+      🐪 <strong>Expect many offers</strong> for horse and camel rides,
+      especially around Petra. Be polite but firm if you’re not interested.
+    </li>
+
+    <li>
+      🗓️ <strong>Plan at least 2 days</strong> for Petra and the surrounding
+      areas to truly enjoy them without rushing.
+    </li>
+
+    <li>
+      🌙 <strong>Petra by Night</strong> — some people love it, but I personally
+      found it a bit overpriced compared to the daytime experience.
+    </li>
+
+    <li>
+      ⭐ <strong>Stay after sunset</strong> — the night sky in Jordan is
+      breathtaking. Sit quietly, look up, and enjoy the stars.
+    </li>
+  </ul>
+</div>
+
         </p>
-        <p>
-          On the way back, a kind stranger gave me a lift toward Amman —
-          another reminder of how welcoming people in Jordan are.
-        </p>
-        <p>
-          🚕 Uber is cheap and very convenient in Jordan.
-        </p>
+        
+      </div>
+	  
+	  
+	  {/* Day 4 */}
+      <div style={cardStyle}>
+	  
+	   <div className="travel-card">
+  <h3>Day 4 — Dead Sea </h3>
+</div>
+        
+       
+       <div className="travel-section">
+
+  <p>
+    I stayed at the Carob hostel for the last part of my journey. It's a nice
+    community and they do a lot of activities like free group dinner and trips.
+    Also extremely nice hosts.
+  </p>
+
+  <p>
+    I decided to explore the Dead Sea since I did not have much time left.
+    I took the Jett bus this time, got the tickets from their office (Abdali office),
+    round trip 15 JD.
+  </p>
+
+  <p>
+    So, there is this annoying thing though: when the Jett bus drops you,
+    you are aggressively pushed to the resorts. They have lunch and sea packages
+    for around 20–30 JD and say it’s mandatory.
+  </p>
+
+  <p>
+    But I found two Chinese friends and we decided to explore the area on our own.
+    There are public areas where you can walk freely. We walked along the beach
+    for a while — make sure to carry water and snacks because there are not many
+    shops nearby.
+  </p>
+
+  <p>
+    Then we found a taxi driver who took us to the salt beach from the resort
+    area for 20 JD (for 3 people).
+  </p>
+
+  <p>
+    I got a lot of salt crystals haha.
+  </p>
+
+  {/* Dead Sea Salt Photos */}
+  <div className="food-grid">
+    {["salt1.jpeg", "salt2.jpeg", "salt3.jpeg", "salt4.jpeg"].map((img, i) => (
+      <div key={i} className="food-card">
+        <img
+          src={`${process.env.PUBLIC_URL}/images/Jordan/${img}`}
+          alt={`Dead Sea salt ${i + 1}`}
+        />
+      </div>
+    ))}
+  </div>
+
+  <p>
+    Then I hiked around with my friend on the nearby hills and you get really
+    good views of the Dead Sea.
+  </p>
+
+</div>
+
+       
       </div>
     </div>
   </div>
