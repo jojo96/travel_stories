@@ -196,21 +196,26 @@ const JordanPage = () => (
 </div>
 
 		
-		
 		<div className="food-grid">
   {[
-    { img: "food1.jpeg", caption: "Knafeh" },
-    { img: "food2.jpeg", caption: "Salep" },
-    { img: "food3.jpeg", caption: "Arais" },
+    { img: "food1.jpeg", caption: "Knafeh", link: "https://www.internationalcuisine.com/jordanian-kunafa/" },
+    { img: "food2.jpeg", caption: "Salep", link: "https://chefindisguise.com/2018/02/02/sahlab-or-salep/" },
+    { img: "food3.jpeg", caption: "Arais", link: "https://www.fufuskitchen.com/arayes/" },
     { img: "food4.jpeg", caption: "Assorted Bread" },
   ].map((item, i) => (
-    <div key={i} className="food-card">
+    <a
+      key={i}
+      href={item.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="food-card"
+    >
       <img
         src={`${process.env.PUBLIC_URL}/images/Jordan/${item.img}`}
         alt={item.caption}
       />
       <p className="food-caption">{item.caption}</p>
-    </div>
+    </a>
   ))}
 </div>
 
