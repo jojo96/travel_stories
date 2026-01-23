@@ -201,7 +201,7 @@ const JordanPage = () => (
     { img: "food1.jpeg", caption: "Knafeh", link: "https://www.internationalcuisine.com/jordanian-kunafa/" },
     { img: "food2.jpeg", caption: "Salep", link: "https://chefindisguise.com/2018/02/02/sahlab-or-salep/" },
     { img: "food3.jpeg", caption: "Arais", link: "https://www.fufuskitchen.com/arayes/" },
-    { img: "food4.jpeg", caption: "Assorted Bread" },
+    { img: "food4.jpeg", caption: "Assorted Bread" }
   ].map((item, i) => (
     <a
       key={i}
