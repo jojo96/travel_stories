@@ -5,16 +5,16 @@ import "react-image-gallery/styles/css/image-gallery.css";
 
 const images = [
   {
-    original: "images/France/1.jpeg",
-    thumbnail: "images/France/1.jpeg",
+    original: `${process.env.PUBLIC_URL}/images/France/1.jpeg`,
+    thumbnail: `${process.env.PUBLIC_URL}/images/France/1.jpeg`,
   },
   {
-    original: "images/France/2.jpeg",
-    thumbnail: "images/France/2.jpeg",
+    original: `${process.env.PUBLIC_URL}/images/France/2.jpeg`,
+    thumbnail: `${process.env.PUBLIC_URL}/images/France/2.jpeg`,
   },
   {
-    original: "images/France/3.jpeg",
-    thumbnail: "images/France/3.jpeg",
+    original: `${process.env.PUBLIC_URL}/images/France/3.jpeg`,
+    thumbnail: `${process.env.PUBLIC_URL}/images/France/3.jpeg`,
   },
 
 
