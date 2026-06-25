@@ -24,6 +24,7 @@ export default function App() {
     { value: "spain", label: "Spain" },
     { value: "france", label: "France" },
     { value: "jordan", label: "Jordan" },
+    { value: "kazakhstan", label: "Kazakhstan" },
   ];
 
   const navigate = useNavigate();
