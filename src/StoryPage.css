@@ -1,41 +1,44 @@
-/* Egypt travel story - sand, gold and Nile blue */
+/* Shared styling for the country travel stories.
+   Per-country accents are set as CSS variables on the .story root. */
 
-.eg {
-  --eg-sand: #f4ecdd;
-  --eg-paper: #fffdf8;
-  --eg-ink: #243242;
-  --eg-muted: #6d6256;
-  --eg-gold: #b8860b;
-  --eg-gold-soft: #e2c88a;
-  --eg-nile: #1f6f78;
+.story {
+  --story-paper: #fffdf8;
+  --story-sand: #f4ecdd;
+  --story-ink: #243242;
+  --story-body: #3a3228;
+  --story-muted: #6d6256;
+  --story-accent: #b8860b;
+  --story-accent-soft: #e2c88a;
+  --story-link: #1f6f78;
+  --story-divider: #e6dcc6;
 
-  background: var(--eg-sand);
-  color: var(--eg-ink);
+  background: var(--story-sand);
+  color: var(--story-ink);
   font-family: Georgia, "Times New Roman", serif;
   min-height: 100vh;
   padding-bottom: 80px;
 }
 
 /* ---------- hero ---------- */
-.eg-hero {
+.story-hero {
   position: relative;
   height: 68vh;
   min-height: 420px;
   background-size: cover;
-  background-position: center 58%;
+  background-position: center 55%;
   display: flex;
   align-items: flex-end;
   justify-content: center;
 }
 
-.eg-hero::after {
+.story-hero::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, rgba(20, 26, 34, 0.45) 0%, rgba(20, 26, 34, 0.1) 35%, rgba(20, 26, 34, 0.78) 100%);
 }
 
-.eg-hero-inner {
+.story-hero-inner {
   position: relative;
   z-index: 1;
   text-align: center;
@@ -44,7 +47,7 @@
   max-width: 820px;
 }
 
-.eg-hero h1 {
+.story-hero h1 {
   font-size: clamp(2.8rem, 9vw, 5rem);
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -53,7 +56,7 @@
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
 }
 
-.eg-hero-sub {
+.story-hero-sub {
   font-size: clamp(0.95rem, 2.4vw, 1.2rem);
   font-style: italic;
   opacity: 0.95;
@@ -61,14 +64,14 @@
   text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
 }
 
-.eg-chips {
+.story-chips {
   display: flex;
   gap: 10px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.eg-chip {
+.story-chip {
   border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 999px;
   padding: 5px 14px;
@@ -78,7 +81,7 @@
   background: rgba(255, 255, 255, 0.08);
 }
 
-.eg-back {
+.story-back {
   position: absolute;
   top: 20px;
   left: 22px;
@@ -93,123 +96,182 @@
   border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
-.eg-back:hover {
+.story-back:hover {
   background: rgba(0, 0, 0, 0.6);
   text-decoration: none;
 }
 
 /* ---------- page body ---------- */
-.eg-wrap {
+.story-wrap {
   max-width: 920px;
   margin: -60px auto 0;
   position: relative;
   z-index: 2;
-  background: var(--eg-paper);
+  background: var(--story-paper);
   border-radius: 14px;
   box-shadow: 0 18px 50px rgba(40, 30, 10, 0.14);
   padding: 56px clamp(20px, 5vw, 60px) 60px;
 }
 
-.eg-lead {
+.story-lead {
   font-size: 1.22rem;
   line-height: 1.85;
-  color: #3a3228;
+  color: var(--story-body);
 }
 
-.eg-lead::first-letter {
+.story-lead::first-letter {
   float: left;
   font-size: 3.6rem;
   line-height: 0.82;
   padding: 6px 10px 0 0;
-  color: var(--eg-gold);
+  color: var(--story-accent);
 }
 
-.eg p {
+.story p {
   font-size: 1.08rem;
   line-height: 1.85;
   margin: 0 0 18px;
 }
 
-.eg a {
-  color: var(--eg-nile);
+.story strong {
+  color: var(--story-body);
+  font-weight: 700;
+}
+
+.story a {
+  color: var(--story-link);
   text-decoration: none;
-  border-bottom: 1px solid var(--eg-gold-soft);
+  border-bottom: 1px solid var(--story-accent-soft);
 }
 
-.eg a:hover {
-  color: var(--eg-gold);
-  border-bottom-color: var(--eg-gold);
+.story a:hover {
+  color: var(--story-accent);
+  border-bottom-color: var(--story-accent);
 }
 
-.eg h2 {
+.story h2 {
   font-size: clamp(1.5rem, 3.6vw, 2rem);
   font-weight: 400;
   letter-spacing: 0.04em;
   margin: 56px 0 6px;
-  color: var(--eg-ink);
+  color: var(--story-ink);
 }
 
-.eg h2 .eg-kicker {
+.story h2 .story-kicker {
   display: block;
   font-size: 0.72rem;
   letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: var(--eg-gold);
+  color: var(--story-accent);
   font-family: Helvetica, Arial, sans-serif;
   margin-bottom: 8px;
 }
 
-.eg-rule {
+.story-rule {
   width: 64px;
   height: 2px;
-  background: var(--eg-gold);
+  background: var(--story-accent);
   margin: 0 0 26px;
   opacity: 0.7;
 }
 
-.eg h3 {
+.story h3 {
   font-size: 1.18rem;
   font-weight: 600;
   margin: 32px 0 10px;
-  color: #3a3228;
+  color: var(--story-body);
+}
+
+.story h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 24px 0 8px;
+  color: var(--story-body);
+}
+
+.story ul,
+.story ol {
+  font-size: 1.06rem;
+  line-height: 1.85;
+  padding-left: 22px;
+  margin: 0 0 18px;
+}
+
+.story ul {
+  list-style: disc;
+}
+
+.story ol {
+  list-style: decimal;
+}
+
+.story ul ul {
+  list-style: circle;
+}
+
+.story li {
+  margin-bottom: 6px;
 }
 
 /* ---------- tip callout ---------- */
-.eg-tip {
+.story-tip {
   display: flex;
   gap: 14px;
   align-items: flex-start;
-  background: var(--eg-sand);
-  border-left: 4px solid var(--eg-gold);
+  background: var(--story-sand);
+  border-left: 4px solid var(--story-accent);
   border-radius: 8px;
   padding: 16px 18px;
   margin: 26px 0;
 }
 
-.eg-tip-icon {
+.story-tip-icon {
   font-size: 1.3rem;
   line-height: 1.4;
 }
 
-.eg-tip p {
+.story-tip p,
+.story-tip ul,
+.story-tip ol {
   margin: 0;
   font-size: 1rem;
   line-height: 1.7;
 }
 
-.eg-tip p + p {
+.story-tip p + p {
   margin-top: 8px;
 }
 
+/* ---------- panel ---------- */
+.story-panel {
+  background: var(--story-sand);
+  border-radius: 12px;
+  padding: 24px 26px;
+  margin: 26px 0;
+}
+
+.story-panel > :last-child {
+  margin-bottom: 0;
+}
+
+.story-panel-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--story-accent);
+  font-family: Helvetica, Arial, sans-serif;
+  margin-bottom: 10px;
+}
+
 /* ---------- figures ---------- */
-.eg-figure {
+.story-figure {
   margin: 30px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.eg-figure img {
+.story-figure img {
   width: auto;
   max-width: 100%;
   max-height: 72vh;
@@ -220,40 +282,41 @@
   transition: transform 0.35s ease;
 }
 
-.eg-figure img:hover {
+.story-figure img:hover {
   transform: scale(1.01);
 }
 
-.eg-cap {
+.story-cap {
   font-size: 0.9rem;
   font-style: italic;
-  color: var(--eg-muted);
+  color: var(--story-muted);
   text-align: center;
   margin-top: 10px;
 }
 
 /* ---------- photo grid ---------- */
-.eg-grid {
+.story-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 18px;
   margin: 28px 0;
 }
 
-.eg-grid.two {
+.story-grid.two {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
-.eg-tile {
+.story-tile {
   border: none;
   padding: 0;
+  margin: 0;
   background: transparent;
   cursor: zoom-in;
   text-align: center;
   font-family: inherit;
 }
 
-.eg-tile img {
+.story-tile img {
   width: 100%;
   height: 190px;
   object-fit: cover;
@@ -263,36 +326,25 @@
   display: block;
 }
 
-.eg-tile:hover img {
+.story-tile.contain img {
+  object-fit: contain;
+  background: #fff;
+}
+
+.story-tile:hover img {
   transform: translateY(-4px);
   box-shadow: 0 14px 30px rgba(40, 30, 10, 0.24);
 }
 
-.eg-tile figcaption {
+.story-tile figcaption {
   margin-top: 8px;
   font-size: 0.88rem;
-  color: var(--eg-muted);
+  color: var(--story-muted);
   font-style: italic;
 }
 
 /* ---------- route ---------- */
-.eg-route {
-  background: var(--eg-sand);
-  border-radius: 12px;
-  padding: 22px 24px;
-  margin: 26px 0;
-}
-
-.eg-route-label {
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--eg-gold);
-  font-family: Helvetica, Arial, sans-serif;
-  margin-bottom: 10px;
-}
-
-.eg-legs {
+.story-legs {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -300,37 +352,72 @@
   font-size: 1.02rem;
 }
 
-.eg-legs .stop {
+.story-legs .stop {
   background: #fff;
-  border: 1px solid var(--eg-gold-soft);
+  border: 1px solid var(--story-accent-soft);
   border-radius: 999px;
   padding: 5px 14px;
   white-space: nowrap;
 }
 
-.eg-legs .arrow {
-  color: var(--eg-gold);
+.story-legs .arrow {
+  color: var(--story-accent);
 }
 
-.eg-route p {
-  margin: 14px 0 0;
-  font-size: 0.98rem;
-  color: var(--eg-muted);
+/* ---------- info cards ---------- */
+.story-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin: 26px 0;
+}
+
+.story-card {
+  background: var(--story-sand);
+  border-radius: 10px;
+  padding: 20px 22px;
+}
+
+.story-card h4 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.story-card p {
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0 0 8px;
+}
+
+.story-card p:last-child {
+  margin-bottom: 0;
+}
+
+.story-card .price {
+  font-weight: 700;
+  color: var(--story-accent);
+}
+
+.story-card .meta {
+  font-style: italic;
+  color: var(--story-muted);
 }
 
 /* ---------- itinerary ---------- */
-.eg-timeline {
+.story-timeline {
   margin: 30px 0 10px;
-  border-left: 2px solid var(--eg-gold-soft);
+  list-style: none;
+  border-left: 2px solid var(--story-accent-soft);
   padding-left: 26px;
+  list-style: none;
 }
 
-.eg-day {
+.story-day {
   position: relative;
   margin-bottom: 30px;
 }
 
-.eg-day::before {
+.story-day::before {
   content: "";
   position: absolute;
   left: -34px;
@@ -338,72 +425,78 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--eg-gold);
-  box-shadow: 0 0 0 4px var(--eg-paper);
+  background: var(--story-accent);
+  box-shadow: 0 0 0 4px var(--story-paper);
 }
 
-.eg-day h4 {
+.story-day h4 {
   margin: 0 0 6px;
   font-size: 1.08rem;
-  color: var(--eg-ink);
+  color: var(--story-ink);
   font-weight: 600;
 }
 
-.eg-day .eg-date {
+.story-day .story-date {
   display: block;
   font-size: 0.72rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--eg-gold);
+  color: var(--story-accent);
   font-family: Helvetica, Arial, sans-serif;
   margin-bottom: 4px;
 }
 
-.eg-day p {
+.story-day p,
+.story-day ul {
   margin: 0;
   font-size: 1rem;
   color: #4a4336;
 }
 
-/* ---------- tips list ---------- */
-.eg-tips {
-  list-style: none;
+.story-day ul {
+  padding-left: 20px;
+}
+
+/* ---------- checklist ---------- */
+.story-checklist {
+  list-style: none !important;
   padding: 0;
   margin: 24px 0 0;
 }
 
-.eg-tips li {
+.story-checklist li {
   display: flex;
   gap: 12px;
   padding: 13px 0;
-  border-bottom: 1px dashed #e6dcc6;
+  border-bottom: 1px dashed var(--story-divider);
   font-size: 1.02rem;
   line-height: 1.7;
+  margin: 0;
 }
 
-.eg-tips li:last-child {
+.story-checklist li:last-child {
   border-bottom: none;
 }
 
-.eg-tips .ico {
+.story-checklist .ico {
   font-size: 1.15rem;
 }
 
 /* ---------- closing ---------- */
-.eg-closing {
+.story-closing {
   margin-top: 50px;
   padding: 30px 28px;
-  background: var(--eg-sand);
+  background: var(--story-sand);
   border-radius: 12px;
   text-align: center;
   font-size: 1.14rem;
   font-style: italic;
   line-height: 1.9;
-  color: #3a3228;
+  color: var(--story-body);
 }
 
 /* ---------- lightbox ---------- */
-.eg-lightbox {
+.story-lightbox {
   position: fixed;
   inset: 0;
   background: rgba(14, 16, 20, 0.92);
@@ -416,21 +509,21 @@
   cursor: zoom-out;
 }
 
-.eg-lightbox img {
+.story-lightbox img {
   max-width: 100%;
   max-height: 86vh;
   border-radius: 6px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
 }
 
-.eg-lightbox figcaption {
+.story-lightbox figcaption {
   color: #efe7d6;
   font-style: italic;
   margin-top: 16px;
   font-size: 0.95rem;
 }
 
-.eg-lightbox-close {
+.story-lightbox-close {
   position: absolute;
   top: 18px;
   right: 24px;
@@ -443,23 +536,24 @@
 }
 
 /* ---------- gallery tweaks ---------- */
-.eg-gallery {
+.story-gallery {
   margin: 30px 0;
 }
 
-.eg-gallery .image-gallery-slide img {
+.story-gallery .image-gallery-slide img {
   border-radius: 10px;
   max-height: 72vh;
   object-fit: contain;
   background: #15171b;
 }
 
-.eg-gallery .image-gallery-thumbnail.active,
-.eg-gallery .image-gallery-thumbnail:hover {
-  border-color: var(--eg-gold);
+.story-gallery .image-gallery-thumbnail.active,
+.story-gallery .image-gallery-thumbnail:focus,
+.story-gallery .image-gallery-thumbnail:hover {
+  border-color: var(--story-accent);
 }
 
-.eg-gallery .image-gallery-description {
+.story-gallery .image-gallery-description {
   background: rgba(20, 20, 20, 0.6);
   font-style: italic;
   font-family: Georgia, serif;
@@ -471,26 +565,26 @@
 }
 
 @media (max-width: 700px) {
-  .eg-hero {
+  .story-hero {
     height: 52vh;
     min-height: 320px;
   }
 
-  .eg-wrap {
+  .story-wrap {
     margin-top: -36px;
     border-radius: 10px;
     padding: 36px 18px 44px;
   }
 
-  .eg-grid {
+  .story-grid {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
 
-  .eg-tile img {
+  .story-tile img {
     height: 140px;
   }
 
-  .eg-lead {
+  .story-lead {
     font-size: 1.1rem;
   }
 }

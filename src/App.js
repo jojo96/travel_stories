@@ -1,40 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { MapContainer, TileLayer, GeoJSON, Marker, Popup } from "react-leaflet";
+import { Link, useNavigate } from "react-router-dom";
 import "leaflet/dist/leaflet.css";
-import { BrowserRouter, Routes, Route, useNavigate,createBrowserRouter, RouterProvider } from "react-router-dom";
-import { visitedCountries, visitedCities } from "./data";
+import "./HomePage.css";
+
+import { visitedCountries } from "./data";
 import { onEachCountryComplex } from "./MapPage";
-import L from "leaflet";
+import { visitedCountriesMarkers } from "./visitedCountriesMarkers";
+import { cardImage, stories, storySlugByCountry } from "./stories";
 
-import Select from 'react-select';
-import apps from "./CountrySelector";
-import BelgiumPage from './BelgiumPage';
-import ReactDOM from 'react-dom/client';
-import { visitedCountriesMarkers } from './visitedCountriesMarkers';
-
-
+const stats = [
+  { value: "43", label: "in Europe" },
+  { value: "13", label: "in Asia" },
+  { value: "1", label: "in Africa" },
+  { value: String(stories.length), label: "written up" },
+];
 
 export default function App() {
   const [geoData, setGeoData] = useState(null);
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [showMapModal, setShowMapModal] = useState(false);
-
-  const options = [
-    { value: "belgium", label: "Belgium" },
-    { value: "spain", label: "Spain" },
-    { value: "france", label: "France" },
-    { value: "jordan", label: "Jordan" },
-    { value: "kazakhstan", label: "Kazakhstan" },
-    { value: "egypt", label: "Egypt" },
-  ];
-
+  const [query, setQuery] = useState("");
   const navigate = useNavigate();
-
-  const handleVisit = () => {
-    if (selectedOption) {
-      navigate(`/${selectedOption.value}`);
-    }
-  };
 
   useEffect(() => {
     fetch("https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson")
@@ -46,132 +31,118 @@ export default function App() {
       .catch((err) => console.error(err));
   }, []);
 
+  const visible = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return stories;
+    return stories.filter(
+      (s) => s.name.toLowerCase().includes(q) || s.places.toLowerCase().includes(q)
+    );
+  }, [query]);
+
   function getCountryStyle(feature) {
     const name = feature.properties.name;
     if (visitedCountries.includes(name)) {
       return {
-        fillColor: "#1E90FF",
-        fillOpacity: 0.4,
-        color: "#1E90FF",
+        fillColor: "#b8860b",
+        fillOpacity: 0.32,
+        color: "#b8860b",
         weight: 1,
       };
     }
     return { fillOpacity: 0, weight: 0 };
   }
 
+  // Enter jumps straight to the only remaining story.
+  const onSearchKeyDown = (e) => {
+    if (e.key === "Enter" && visible.length === 1) navigate(`/${visible[0].slug}`);
+  };
+
   return (
-    <div className="flex flex-col md:flex-row h-screen">
-      {/* Left Panel */}
-      <div className="w-full md:w-[45%] p-8 bg-gray-100 overflow-y-auto font-sans text-gray-800">
-        <h1 className="text-blue-600 text-2xl mb-5">My travel stories!</h1>
+    <div className="home">
+      <div className="home-inner">
+        <header className="home-masthead">
+          <h1>My travel stories</h1>
+          <p className="home-tagline">Photographs and notes from the road.</p>
 
-        {/* Europe Statistic */}
-        <div className="flex items-center mb-2 bg-white p-4 rounded-lg shadow">
-          <img src={`${process.env.PUBLIC_URL}/images/countries/europe.png`} alt="Europe Map" className="w-20 mr-5" />
-          <div>
-            <h3 className="text-lg font-semibold">Europe</h3>
-            <p>43 countries visited</p>
+          <div className="home-stats">
+            {stats.map((s) => (
+              <span key={s.label}>
+                <b>{s.value}</b>
+                {s.label}
+              </span>
+            ))}
           </div>
-        </div>
 
-        {/* Asia Statistic */}
-        <div className="flex items-center mt-1 mb-2 bg-white p-4 rounded-lg shadow">
-          <img src={`${process.env.PUBLIC_URL}/images/countries/asia.jpg`} alt="Asia Map" className="w-20 mr-5" />
-          <div>
-            <h3 className="text-lg font-semibold">Asia</h3>
-            <p>13 countries visited</p>
-          </div>
-        </div>
-		
-		{/* Africa Statistic */}
-        <div className="flex items-center mt-1 mb-2 bg-white p-4 rounded-lg shadow">
-          <img src={`${process.env.PUBLIC_URL}/images/countries/africa.jpg`} alt="Asia Map" className="w-20 mr-5" />
-          <div>
-            <h3 className="text-lg font-semibold">Africa</h3>
-            <p>1 visited</p>
-          </div>
-        </div>
+          <div className="home-divider" />
 
-        {/* Country Selector */}
-        <div className="mt-1 p-5 bg-white rounded-lg shadow">
-          <Select
-            value={selectedOption}
-            onChange={setSelectedOption}
-            options={options}
-            placeholder="Type country name to view photo gallery"
-            className="mb-4"
+          <input
+            className="home-search"
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            onKeyDown={onSearchKeyDown}
+            placeholder="Search a country or a place…"
+            aria-label="Search the stories"
           />
-          {selectedOption && (
-            <button
-              onClick={handleVisit}
-              className="w-full py-2 px-4 bg-blue-600 text-white rounded font-bold hover:bg-blue-700"
-            >
-              {selectedOption.label} stories
-            </button>
-          )}
-        </div>
+        </header>
 
-        {/* Mobile-only View Map Button */}
-        <div className="md:hidden mt-4">
-          <button
-            onClick={() => setShowMapModal(true)}
-            className="w-full py-2 px-4 bg-green-600 text-white rounded font-bold hover:bg-green-700"
-          >
-            View my travel map
-          </button>
-        </div>
-      </div>
+        {visible.length > 0 ? (
+          <div className="home-cards">
+            {visible.map((s) => (
+              <Link key={s.slug} to={`/${s.slug}`} className="home-card">
+                <div className="home-card-photo">
+                  <img src={cardImage(s.slug)} alt={s.name} loading="lazy" />
+                  <span className="home-card-name">{s.name}</span>
+                </div>
+                <div className="home-card-body">
+                  <p className="home-card-places">{s.places}</p>
+                  <span className="home-card-read">Read the story →</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <p className="home-empty">
+            Nothing written up for “{query}” yet — try the map below.
+          </p>
+        )}
 
-      {/* Desktop-only Map */}
-      <div className="flex-1 hidden md:block">
-        <MapContainer center={[52, 15]} zoom={3} className="w-full h-full min-h-[300px]">
-          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-          {geoData && (
-            <GeoJSON data={geoData} style={getCountryStyle} onEachFeature={onEachCountryComplex} />
-          )}
-          {/* Add your markers here */}
+        <section className="home-map-section">
+          <div className="home-section-label">Everywhere else</div>
+          <h2 className="home-section-title">The map</h2>
+          <p className="home-section-note">
+            Gold means I have been there. Hover a country for the cities, click a marker for the
+            story.
+          </p>
 
-{visitedCountriesMarkers.map((country, index) => (
-    <Marker key={index} position={country.coords} icon={country.icon}>
-      <Popup>{country.name}</Popup>
-    </Marker>
-  ))}
-
-          {/* ... other markers ... */}
-        </MapContainer>
-      </div>
-
-      {/* Mobile-only Map Modal */}
-      {showMapModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 md:hidden">
-          <div className="bg-white rounded-lg shadow-lg w-full max-w-3xl h-[80vh] overflow-hidden flex flex-col">
-            <MapContainer center={[52, 15]} zoom={3} className="w-full h-[calc(80vh-3rem)]">
-              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+          <div className="home-map">
+            <MapContainer center={[38, 20]} zoom={3} scrollWheelZoom={false}>
+              <TileLayer
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              />
               {geoData && (
                 <GeoJSON data={geoData} style={getCountryStyle} onEachFeature={onEachCountryComplex} />
               )}
-              {/* Add your markers here */}
-             {visitedCountriesMarkers.map((country, index) => (
-    <Marker key={index} position={country.coords} icon={country.icon}>
-      <Popup>{country.name}</Popup>
-    </Marker>
-  ))}
-
-
-              {/* ... other markers ... */}
+              {visitedCountriesMarkers.map((country, index) => {
+                const slug = storySlugByCountry[country.name];
+                return (
+                  <Marker key={index} position={country.coords} icon={country.icon}>
+                    <Popup>
+                      <span className="home-popup">
+                        <span className="name">{country.name}</span>
+                        {slug && <Link to={`/${slug}`}>Read the story →</Link>}
+                      </span>
+                    </Popup>
+                  </Marker>
+                );
+              })}
             </MapContainer>
-
-            <div className="w-full text-center p-4">
-              <button
-                onClick={() => setShowMapModal(false)}
-                className="py-2 px-4 bg-red-500 text-white rounded font-bold hover:bg-red-600"
-              >
-                Close Map
-              </button>
-            </div>
           </div>
-        </div>
-      )}
+        </section>
+
+        <p className="home-footer">More countries than stories, for now. Writing them up slowly.</p>
+      </div>
     </div>
   );
 }
