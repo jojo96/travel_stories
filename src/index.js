@@ -7,6 +7,7 @@ import Spain_Page from './Spain_Page'; // Add more pages as needed
 import FrancePage from './FrancePage'; // Add more pages as needed
 import JordanPage from './JordanPage'; // Add more pages as needed
 import KazakhstanPage from './KazakhstanPage';
+import EgyptPage from './EgyptPage';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
@@ -23,6 +24,7 @@ root.render(
         <Route path="/france" element={<FrancePage />} />
 	<Route path="/jordan" element={<JordanPage />} />
         <Route path="/kazakhstan" element={<KazakhstanPage />} />
+        <Route path="/egypt" element={<EgyptPage />} />
         {/* Add more country routes here */}
       </Routes>
     </HashRouter>

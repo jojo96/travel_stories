@@ -62,3 +62,4 @@ export const malaysiaIcon = makeIcon("malaysia.jpg");
 export const thailandIcon = makeIcon("thailand.jpg");
 export const indonesiaIcon = makeIcon("j2.png");
 export const icelandIcon = makeIcon("church.png");
+export const egyptIcon = makeIcon("egypt.png");

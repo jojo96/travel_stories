@@ -11,6 +11,7 @@ const CountrySelector = () => {
     { value: 'spain', label: 'Spain' },
     { value: 'france', label: 'France' },
     { value: 'kazakhstan', label: 'Kazakhstan' },
+    { value: 'egypt', label: 'Egypt' },
   ];
 
   const handleVisit = () => {
