@@ -9,38 +9,52 @@
   --home-accent: #b8860b;
   --home-accent-soft: #e2c88a;
 
-  background: var(--home-sand);
+  --wall: #c4a06a;
+  --wall-ink: #2e2213;
+  --wall-muted: #4a3720;
+
+  /* Old fort wall: rough ochre stones in crumbling lime mortar, darker at the edges. */
+  background-color: var(--wall);
+  background-image:
+    radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 45%, rgba(60, 38, 12, 0.35) 100%),
+    linear-gradient(rgba(240, 228, 200, 0.22), rgba(240, 228, 200, 0.22)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3E%3Cfilter id='mortar' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.24 0 0 0 0 0.16 0 0 0 0.6 0'/%3E%3C/filter%3E%3Cfilter id='pits' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='2' seed='9' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.22 0 0 0 0 0.16 0 0 0 0 0.08 0 0 0 -7 2.8'/%3E%3C/filter%3E%3Cfilter id='blot' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012' numOctaves='3' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.33 0 0 0 0 0.24 0 0 0 0 0.12 0 0 0 1.1 -0.48'/%3E%3C/filter%3E%3Cfilter id='stone' x='-5%25' y='-5%25' width='110%25' height='110%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='2' seed='8' stitchTiles='stitch' result='t'/%3E%3CfeDisplacementMap in='SourceGraphic' in2='t' scale='6' xChannelSelector='R' yChannelSelector='G' result='d'/%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.07' numOctaves='5' seed='2' stitchTiles='stitch' result='bump'/%3E%3CfeDiffuseLighting in='bump' surfaceScale='3' lighting-color='%23ffffff' result='lit'%3E%3CfeDistantLight azimuth='235' elevation='50'/%3E%3C/feDiffuseLighting%3E%3CfeComposite in='lit' in2='d' operator='arithmetic' k1='0.75' k3='0.4' result='shaded'/%3E%3CfeComposite in='shaded' in2='d' operator='in' result='clip'/%3E%3CfeDropShadow in='clip' dx='1.5' dy='2.5' stdDeviation='1.6' flood-color='%2338260e' flood-opacity='0.6'/%3E%3C/filter%3E%3Crect width='480' height='480' fill='%23d9cdb2'/%3E%3Crect width='480' height='480' filter='url%28%23mortar%29'/%3E%3Crect width='480' height='480' filter='url%28%23pits%29'/%3E%3Cg filter='url%28%23stone%29'%3E%3Crect x='-17.5' y='8.9' width='50.9' height='24.2' rx='8.1' fill='%23b9ad94'/%3E%3Crect x='462.5' y='8.9' width='50.9' height='24.2' rx='8.1' fill='%23b9ad94'/%3E%3Crect x='46.8' y='6.9' width='78.2' height='24.4' rx='10.6' fill='%23d2a867'/%3E%3Crect x='136.0' y='4.9' width='76.6' height='23.7' rx='10.4' fill='%23d2a867'/%3E%3Crect x='228.3' y='10.3' width='64.7' height='23.7' rx='11.0' fill='%23d2a867'/%3E%3Crect x='306.0' y='8.3' width='52.1' height='22.1' rx='7.2' fill='%23bda07a'/%3E%3Crect x='372.4' y='7.8' width='77.2' height='24.9' rx='11.1' fill='%23d4b072'/%3E%3Crect x='-13.4' y='37.2' width='47.1' height='23.5' rx='10.7' fill='%23d4b072'/%3E%3Crect x='466.6' y='37.2' width='47.1' height='23.5' rx='10.7' fill='%23d4b072'/%3E%3Crect x='49.0' y='37.6' width='41.7' height='22.7' rx='6.8' fill='%23b9ad94'/%3E%3Crect x='106.2' y='40.3' width='67.7' height='22.7' rx='7.8' fill='%23bda07a'/%3E%3Crect x='185.6' y='37.5' width='53.8' height='22.5' rx='9.2' fill='%23c8b08a'/%3E%3Crect x='254.9' y='38.8' width='50.5' height='23.9' rx='7.5' fill='%23c39a5c'/%3E%3Crect x='321.3' y='36.5' width='49.3' height='24.9' rx='11.1' fill='%23bda07a'/%3E%3Crect x='386.6' y='39.6' width='67.0' height='23.5' rx='7.9' fill='%23d2a867'/%3E%3Crect x='-0.6' y='73.6' width='35.6' height='29.0' rx='12.1' fill='%23b38c58'/%3E%3Crect x='479.4' y='73.6' width='35.6' height='29.0' rx='12.1' fill='%23b38c58'/%3E%3Crect x='47.7' y='71.2' width='68.1' height='28.2' rx='9.6' fill='%23caa565'/%3E%3Crect x='131.4' y='70.3' width='38.7' height='29.7' rx='9.7' fill='%23d4b072'/%3E%3Crect x='183.7' y='74.5' width='62.9' height='30.3' rx='9.8' fill='%23caa565'/%3E%3Crect x='261.3' y='72.3' width='30.7' height='30.0' rx='11.4' fill='%23e0c48e'/%3E%3Crect x='307.7' y='72.2' width='42.3' height='29.3' rx='12.4' fill='%23c39a5c'/%3E%3Crect x='364.7' y='74.3' width='32.9' height='30.1' rx='9.9' fill='%23e0c48e'/%3E%3Crect x='408.8' y='74.6' width='57.6' height='29.8' rx='12.4' fill='%23e0c48e'/%3E%3Crect x='-15.6' y='111.7' width='42.6' height='31.1' rx='10.9' fill='%23bda07a'/%3E%3Crect x='464.4' y='111.7' width='42.6' height='31.1' rx='10.9' fill='%23bda07a'/%3E%3Crect x='38.1' y='113.5' width='40.6' height='31.5' rx='12.9' fill='%23c8b08a'/%3E%3Crect x='92.7' y='113.3' width='51.3' height='32.3' rx='11.5' fill='%23dcbb80'/%3E%3Crect x='157.7' y='107.6' width='43.8' height='31.7' rx='10.2' fill='%23bda07a'/%3E%3Crect x='217.3' y='111.9' width='31.2' height='32.2' rx='10.1' fill='%23b38c58'/%3E%3Crect x='262.4' y='113.5' width='42.9' height='32.8' rx='9.7' fill='%23c8b08a'/%3E%3Crect x='316.9' y='107.7' width='34.7' height='33.7' rx='14.1' fill='%23cfab74'/%3E%3Crect x='363.3' y='108.4' width='88.0' height='32.0' rx='11.7' fill='%23b8955f'/%3E%3Crect x='-11.4' y='151.1' width='39.1' height='23.4' rx='7.2' fill='%23d2a867'/%3E%3Crect x='468.6' y='151.1' width='39.1' height='23.4' rx='7.2' fill='%23d2a867'/%3E%3Crect x='42.5' y='154.4' width='60.2' height='24.5' rx='11.1' fill='%23d4b072'/%3E%3Crect x='118.3' y='152.6' width='49.4' height='23.4' rx='9.6' fill='%23b8955f'/%3E%3Crect x='183.0' y='154.3' width='41.7' height='23.1' rx='6.7' fill='%23d2a867'/%3E%3Crect x='236.9' y='156.7' width='37.8' height='23.8' rx='10.1' fill='%23d2a867'/%3E%3Crect x='289.7' y='153.2' width='54.5' height='24.3' rx='9.7' fill='%23d4b072'/%3E%3Crect x='358.2' y='151.5' width='46.2' height='24.4' rx='9.1' fill='%23e0c48e'/%3E%3Crect x='419.2' y='151.8' width='36.5' height='24.2' rx='9.2' fill='%23caa565'/%3E%3Crect x='-26.8' y='188.1' width='33.8' height='28.8' rx='13.5' fill='%23d2a867'/%3E%3Crect x='453.2' y='188.1' width='33.8' height='28.8' rx='13.5' fill='%23d2a867'/%3E%3Crect x='20.3' y='187.1' width='61.1' height='28.9' rx='10.3' fill='%23cfab74'/%3E%3Crect x='94.9' y='185.3' width='49.5' height='27.8' rx='11.3' fill='%23d4b072'/%3E%3Crect x='157.6' y='189.7' width='42.4' height='26.9' rx='10.9' fill='%23bda07a'/%3E%3Crect x='213.2' y='186.9' width='41.8' height='27.8' rx='9.9' fill='%23e0c48e'/%3E%3Crect x='270.8' y='187.0' width='34.3' height='27.6' rx='9.7' fill='%23bda07a'/%3E%3Crect x='320.6' y='189.1' width='69.0' height='27.1' rx='11.6' fill='%23e0c48e'/%3E%3Crect x='404.8' y='185.6' width='35.4' height='27.0' rx='11.0' fill='%23c8b08a'/%3E%3Crect x='-14.3' y='222.3' width='65.6' height='33.3' rx='12.4' fill='%23caa565'/%3E%3Crect x='465.7' y='222.3' width='65.6' height='33.3' rx='12.4' fill='%23caa565'/%3E%3Crect x='66.7' y='222.0' width='65.8' height='35.7' rx='13.7' fill='%23cfab74'/%3E%3Crect x='146.6' y='228.2' width='48.8' height='33.8' rx='11.1' fill='%23b9ad94'/%3E%3Crect x='207.2' y='223.7' width='51.7' height='34.0' rx='14.8' fill='%23b8955f'/%3E%3Crect x='270.8' y='223.7' width='34.1' height='35.9' rx='10.4' fill='%23bf8a62'/%3E%3Crect x='320.7' y='222.6' width='75.0' height='34.5' rx='14.1' fill='%23bda07a'/%3E%3Crect x='410.3' y='223.6' width='42.4' height='34.8' rx='13.0' fill='%23cfab74'/%3E%3Crect x='-18.5' y='270.8' width='43.6' height='32.4' rx='10.6' fill='%23d4b072'/%3E%3Crect x='461.5' y='270.8' width='43.6' height='32.4' rx='10.6' fill='%23d4b072'/%3E%3Crect x='40.2' y='265.6' width='76.7' height='30.9' rx='12.3' fill='%23cfab74'/%3E%3Crect x='128.1' y='267.1' width='60.4' height='30.9' rx='12.3' fill='%23d4b072'/%3E%3Crect x='202.3' y='268.1' width='34.7' height='32.1' rx='9.7' fill='%23c8b08a'/%3E%3Crect x='249.8' y='271.5' width='36.7' height='30.6' rx='11.6' fill='%23cfab74'/%3E%3Crect x='297.8' y='268.9' width='39.4' height='31.8' rx='10.1' fill='%23caa565'/%3E%3Crect x='352.2' y='272.3' width='96.3' height='30.2' rx='13.2' fill='%23d4b072'/%3E%3Crect x='-5.0' y='306.7' width='79.5' height='35.0' rx='12.2' fill='%23cfab74'/%3E%3Crect x='475.0' y='306.7' width='79.5' height='35.0' rx='12.2' fill='%23cfab74'/%3E%3Crect x='88.1' y='310.0' width='56.8' height='35.5' rx='12.4' fill='%23e0c48e'/%3E%3Crect x='156.6' y='309.3' width='37.7' height='36.1' rx='11.8' fill='%23d4b072'/%3E%3Crect x='209.3' y='306.1' width='63.4' height='36.4' rx='10.7' fill='%23d2a867'/%3E%3Crect x='285.5' y='308.8' width='47.6' height='36.5' rx='11.7' fill='%23dcbb80'/%3E%3Crect x='348.1' y='306.8' width='50.0' height='36.9' rx='11.6' fill='%23c39a5c'/%3E%3Crect x='410.3' y='310.9' width='51.7' height='36.4' rx='14.7' fill='%23c39a5c'/%3E%3Crect x='-28.8' y='354.2' width='47.6' height='29.4' rx='13.1' fill='%23caa565'/%3E%3Crect x='451.2' y='354.2' width='47.6' height='29.4' rx='13.1' fill='%23caa565'/%3E%3Crect x='33.4' y='354.7' width='54.7' height='30.5' rx='10.0' fill='%23d2a867'/%3E%3Crect x='103.6' y='354.4' width='64.0' height='30.3' rx='9.3' fill='%23c8b08a'/%3E%3Crect x='181.2' y='353.1' width='75.4' height='28.1' rx='10.9' fill='%23bf8a62'/%3E%3Crect x='272.3' y='351.8' width='69.7' height='31.0' rx='9.5' fill='%23e0c48e'/%3E%3Crect x='356.1' y='351.2' width='82.1' height='29.1' rx='10.5' fill='%23c8b08a'/%3E%3Crect x='-23.2' y='392.4' width='55.7' height='25.1' rx='10.8' fill='%23d2a867'/%3E%3Crect x='456.8' y='392.4' width='55.7' height='25.1' rx='10.8' fill='%23d2a867'/%3E%3Crect x='48.3' y='393.2' width='75.5' height='25.3' rx='8.2' fill='%23c39a5c'/%3E%3Crect x='138.2' y='396.5' width='73.3' height='24.3' rx='10.2' fill='%23c8b08a'/%3E%3Crect x='227.3' y='395.7' width='67.8' height='23.0' rx='8.9' fill='%23bda07a'/%3E%3Crect x='307.1' y='395.9' width='56.6' height='24.9' rx='7.5' fill='%23dcbb80'/%3E%3Crect x='375.5' y='393.0' width='68.3' height='24.2' rx='8.0' fill='%23cfab74'/%3E%3Crect x='-17.1' y='424.9' width='48.9' height='45.3' rx='18.1' fill='%23b8955f'/%3E%3Crect x='462.9' y='424.9' width='48.9' height='45.3' rx='18.1' fill='%23b8955f'/%3E%3Crect x='45.1' y='427.6' width='31.8' height='44.3' rx='13.5' fill='%23d2a867'/%3E%3Crect x='91.6' y='426.2' width='66.5' height='43.8' rx='14.2' fill='%23c39a5c'/%3E%3Crect x='169.1' y='427.1' width='63.2' height='45.0' rx='17.8' fill='%23b9ad94'/%3E%3Crect x='244.3' y='429.1' width='41.4' height='44.6' rx='19.7' fill='%23cfab74'/%3E%3Crect x='297.0' y='427.0' width='48.5' height='44.3' rx='17.0' fill='%23cfab74'/%3E%3Crect x='358.4' y='427.9' width='61.4' height='45.0' rx='18.5' fill='%23b38c58'/%3E%3C/g%3E%3Crect width='480' height='480' filter='url%28%23blot%29'/%3E%3C/svg%3E");
+  background-size: auto, auto, 480px 480px;
   color: var(--home-ink);
   font-family: Georgia, "Times New Roman", serif;
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
 .home-inner {
-  max-width: 1120px;
+  position: relative;
+  z-index: 1;
+  max-width: 1800px;
   margin: 0 auto;
-  padding: clamp(40px, 7vw, 80px) clamp(18px, 4vw, 40px) 70px;
+  padding: clamp(24px, 4vw, 44px) clamp(18px, 4vw, 40px) 70px;
 }
 
 /* ---------- masthead ---------- */
 .home-masthead {
   text-align: center;
-  margin-bottom: clamp(32px, 5vw, 54px);
+  margin-bottom: 16px;
 }
 
 .home-masthead h1 {
-  font-size: clamp(2rem, 6vw, 3.4rem);
+  font-size: clamp(1.6rem, 4.5vw, 2.6rem);
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  margin: 0 0 14px;
+  margin: 0 0 4px;
   color: var(--home-ink);
 }
 
 .home-tagline {
-  font-size: clamp(1rem, 2.4vw, 1.18rem);
+  font-size: clamp(0.95rem, 2vw, 1.08rem);
   font-style: italic;
   color: var(--home-muted);
-  margin: 0 0 24px;
+  margin: 0 0 10px;
 }
 
 .home-stats {
@@ -58,7 +72,7 @@
 
 .home-stats b {
   font-family: Georgia, serif;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   letter-spacing: 0.02em;
   color: var(--home-accent);
   margin-right: 7px;
@@ -77,8 +91,8 @@
 .home-search {
   display: block;
   width: min(420px, 100%);
-  margin: 28px auto 0;
-  padding: 12px 18px;
+  margin: 0 auto 16px;
+  padding: 9px 18px;
   font-family: Georgia, serif;
   font-size: 1rem;
   color: var(--home-ink);
@@ -100,32 +114,80 @@
   box-shadow: 0 0 0 4px rgba(184, 134, 11, 0.12);
 }
 
-/* ---------- story cards ---------- */
-.home-cards {
+/* ---------- board: stories pinned either side of the map ---------- */
+.home-board {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-  gap: 26px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "map map"
+    "left right";
+  gap: 40px 28px;
+  align-items: start;
 }
 
+.home-cards-left { grid-area: left; }
+.home-cards-right { grid-area: right; }
+.home-map-section { grid-area: map; }
+
+.home-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 44px;
+  padding-top: 10px;
+}
+
+@media (min-width: 1400px) {
+  .home-board {
+    grid-template-columns: minmax(200px, 250px) minmax(0, 1fr) minmax(200px, 250px);
+    grid-template-areas: "left map right";
+    gap: 40px;
+  }
+
+  /* Stagger the side columns so they don't line up like a grid. */
+  .home-cards-left { padding-top: 0; }
+  .home-cards-right { padding-top: 70px; }
+  .home-cards .home-card:nth-child(even) { margin-left: 26px; }
+  .home-cards .home-card:nth-child(odd) { margin-right: 18px; }
+}
+
+/* ---------- story cards: pinned photo prints ---------- */
 .home-card {
+  position: relative;
   display: block;
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+  padding: 9px 9px 0;
   text-decoration: none;
   color: inherit;
-  background: var(--home-paper);
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 10px 26px rgba(40, 30, 10, 0.12);
+  background: #fdfaf2;
+  border-radius: 2px;
+  transform: rotate(var(--tilt, 0deg));
+  box-shadow:
+    0 1px 2px rgba(40, 25, 10, 0.2),
+    4px 12px 20px -6px rgba(40, 25, 10, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.home-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(40, 30, 10, 0.22);
+.home-card:hover,
+.home-card:focus-visible {
+  z-index: 2;
+  transform: rotate(0deg) scale(1.04);
+  box-shadow:
+    0 1px 2px rgba(40, 25, 10, 0.2),
+    8px 22px 32px -8px rgba(40, 25, 10, 0.45);
+}
+
+.home-card-pin {
+  top: -7px;
+  left: calc(50% - 8px);
+  z-index: 3;
 }
 
 .home-card-photo {
   position: relative;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
 }
 
@@ -134,50 +196,19 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.6s ease;
+  filter: sepia(0.15) saturate(0.95);
 }
 
-.home-card:hover .home-card-photo img {
-  transform: scale(1.05);
-}
-
-.home-card-photo::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 45%, rgba(18, 22, 28, 0.72) 100%);
-}
-
+/* Just the country name, on the white strip below the photo. */
 .home-card-name {
-  position: absolute;
-  left: 20px;
-  right: 20px;
-  bottom: 16px;
-  z-index: 1;
-  color: #fff;
-  font-size: 1.5rem;
-  letter-spacing: 0.16em;
+  display: block;
+  padding: 10px 4px 12px;
+  text-align: center;
+  color: var(--home-ink);
+  font-size: 1.05rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
-}
-
-.home-card-body {
-  padding: 16px 20px 20px;
-}
-
-.home-card-places {
-  font-size: 0.97rem;
-  color: var(--home-muted);
-  line-height: 1.6;
-  margin: 0 0 10px;
-}
-
-.home-card-read {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--home-accent);
+  white-space: nowrap;
 }
 
 .home-empty {
@@ -189,7 +220,7 @@
 
 /* ---------- map ---------- */
 .home-map-section {
-  margin-top: clamp(50px, 7vw, 80px);
+  min-width: 0;
 }
 
 .home-section-label {
@@ -215,21 +246,109 @@
   font-size: 0.98rem;
   font-style: italic;
   color: var(--home-muted);
-  margin: 0 0 24px;
+  margin: 0 0 14px;
 }
 
+/* Framed like a print in an old atlas: double rule border on parchment. */
 .home-map {
-  height: 560px;
+  position: relative;
+  height: min(56vh, 520px);
+  min-height: 360px;
   width: 100%;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(40, 30, 10, 0.14);
+  padding: 10px;
+  box-sizing: border-box;
+  background: #efe2c4;
+  border: 1px solid #8a6d45;
+  outline: 3px double #8a6d45;
+  outline-offset: -8px;
+  /* Hung on the wall: a tight contact shadow plus a soft drop below. */
+  box-shadow:
+    0 1px 2px rgba(40, 25, 10, 0.25),
+    0 18px 30px -12px rgba(40, 25, 10, 0.45),
+    0 30px 60px -30px rgba(40, 25, 10, 0.35);
+}
+
+/* Pushpins in the corners of the poster, sitting above the map panes. */
+.wall-pin {
+  position: absolute;
+  z-index: 1100;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #f1867c, #b3261e 55%, #6b1410);
+  box-shadow: 2px 4px 4px rgba(40, 20, 10, 0.45);
+  pointer-events: none;
+}
+
+.wall-pin-tl { top: -4px; left: -4px; }
+.wall-pin-tr { top: -4px; right: -4px; }
+.wall-pin-bl { bottom: -4px; left: -4px; }
+.wall-pin-br { bottom: -4px; right: -4px; }
+
+.home-map-legend {
+  text-align: center;
+  margin: 12px 0 0;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--home-muted);
 }
 
 .home-map .leaflet-container {
   height: 100%;
   width: 100%;
-  background: #eaf0f4;
+  background: #e8d9b5;
+  border: 1px solid #8a6d45;
+  font-family: Georgia, serif;
+}
+
+/* Age the tiles: warm sepia, a touch faded. */
+.home-map .leaflet-tile-pane {
+  filter: sepia(0.65) saturate(0.85) contrast(0.95) brightness(1.02);
+}
+
+/* Paper vignette over the tiles (below markers and popups). */
+.home-map .leaflet-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 450;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 55%, rgba(90, 60, 20, 0.28) 100%);
+}
+
+.home-map .leaflet-control-zoom a {
+  font-family: Georgia, serif;
+  background: #f6ecd4;
+  color: #4a3b2a;
+  border-color: #8a6d45;
+}
+
+.home-map .leaflet-control-attribution {
+  background: rgba(239, 226, 196, 0.8);
+  color: #6d5a3e;
+  font-family: Georgia, serif;
+}
+
+.home-map .leaflet-popup-content-wrapper,
+.home-map .leaflet-popup-tip {
+  background: #f8efd9;
+  color: #3a2c1c;
+  border: 1px solid #8a6d45;
+  border-radius: 3px;
+}
+
+.home-map .home-tooltip {
+  font-family: Georgia, serif;
+  font-size: 0.85rem;
+  color: #3a2c1c;
+  background: #f8efd9;
+  border: 1px solid #8a6d45;
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(40, 25, 10, 0.3);
+}
+
+.home-map .home-tooltip::before {
+  border-top-color: #8a6d45;
 }
 
 .home-popup {
@@ -262,13 +381,16 @@
 }
 
 @media (max-width: 640px) {
-  .home-cards {
+  .home-board {
     grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-areas:
+      "map"
+      "left"
+      "right";
   }
 
   .home-map {
-    height: 380px;
+    height: 50vh;
   }
 
   .home-stats {
@@ -278,5 +400,123 @@
 
   .home-stats b {
     font-size: 1.25rem;
+  }
+}
+
+/* ---------- map markers ---------- */
+.home-map .map-pushpin {
+  background: none;
+  border: none;
+  filter: drop-shadow(2px 3px 1.5px rgba(40, 25, 10, 0.4));
+  animation: pin-in 0.25s ease-out;
+}
+
+.home-map .map-pushpin .pin-head {
+  fill: #b08d3c;
+  stroke: #5e4a22;
+  stroke-width: 1;
+}
+
+.home-map .map-pushpin-story .pin-head {
+  fill: #b3261e;
+  stroke: #5a1210;
+}
+
+.home-map .map-pushpin:hover {
+  filter: drop-shadow(2px 4px 2px rgba(40, 25, 10, 0.5)) brightness(1.1);
+}
+
+@keyframes pin-in {
+  from {
+    opacity: 0;
+  }
+}
+
+/* ---------- paper pinned to the wall ---------- */
+/* Anything with text sits on paper so it stays readable over the stone. */
+.home-notice {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 16px clamp(20px, 4vw, 48px) 16px;
+  background: linear-gradient(#f8efda, #f1e4c6);
+  border: 1px solid #b59a6c;
+  border-radius: 2px;
+  transform: rotate(-0.6deg);
+  box-shadow:
+    0 1px 2px rgba(40, 25, 10, 0.25),
+    3px 12px 22px -8px rgba(40, 25, 10, 0.5);
+}
+
+.home-notice-pin-l { top: -6px; left: 16px; }
+.home-notice-pin-r { top: -6px; right: 16px; }
+
+.wall-tag {
+  display: inline-block;
+  padding: 5px 16px;
+  background: rgba(248, 239, 218, 0.95);
+  border: 1px solid #b59a6c;
+  border-radius: 2px;
+  font-style: italic;
+  color: var(--home-body);
+  box-shadow: 0 4px 10px -4px rgba(40, 25, 10, 0.45);
+}
+
+.home-stats b {
+  color: #8a4a12;
+}
+
+/* ---------- wide screens: the whole board fits in one screen ---------- */
+@media (min-width: 1400px) and (min-height: 600px) {
+  .home-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    box-sizing: border-box;
+    padding-block: 18px 10px;
+  }
+
+  .home-board {
+    flex: 1;
+    min-height: 0;
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  .home-map-section {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    min-height: 0;
+  }
+
+  .home-map {
+    flex: 1;
+    height: auto;
+    min-height: 280px;
+  }
+
+  /* Size the side cards from the window height so three fit in a column. */
+  .home-cards {
+    gap: 2vh;
+    padding-top: 6px;
+  }
+
+  .home-cards .home-card {
+    width: min(250px, calc((100vh - 200px) / 3.3));
+  }
+
+  .home-cards-right {
+    padding-top: 2.5vh;
+  }
+
+  .home-cards .home-card-name {
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    padding: 8px 2px 10px;
+  }
+
+  .home-footer {
+    margin-top: 10px;
   }
 }
