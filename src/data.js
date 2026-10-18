@@ -6,7 +6,7 @@ export const visitedCountries = [
   "Romania","San Marino","Republic of Serbia","Slovakia","Slovenia","Spain","Sweden",
   "Switzerland","United Kingdom","Vatican City", "Kosovo", "Uzbekistan","Thailand",
   "Malaysia","Indonesia","Singapore","Georgia","Azerbaijan", "Bhutan", "Turkey",
-  "Egypt"
+  "Egypt","Jordan","Kazakhstan"
 ];
 
 export const visitedCities = {
@@ -58,5 +58,7 @@ export const visitedCities = {
   "Malaysia": ["Kuala Lumpur"],
   "Indonesia": ["Jakarta"],
   "Singapore": ["Singapore city"],
-  "Egypt": ["Luxor","Cairo","Alexandria"]
+  "Egypt": ["Luxor","Cairo","Alexandria"],
+  "Jordan": ["Amman","Petra","Dead Sea"],
+  "Kazakhstan": ["Almaty"]
 };

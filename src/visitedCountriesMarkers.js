@@ -10,7 +10,8 @@ bulgariaIcon, serbiaIcon, romaniaIcon, moldovaIcon,
 montenegroIcon,kosovoIcon,
 indiaIcon, uzbekistanIcon, turkeyIcon, malaysiaIcon,
  thailandIcon, indonesiaIcon,
-georgiaIcon, azerbaijanIcon, egyptIcon } from "./markerIcons";
+georgiaIcon, azerbaijanIcon, egyptIcon, jordanIcon,
+ kazakhstanIcon } from "./markerIcons";
 
 export const visitedCountriesMarkers = [
   { name: "Belgium", coords: [50.640168, 4.666682], icon: waffleIcon },
@@ -57,4 +58,6 @@ export const visitedCountriesMarkers = [
   { name: "Greece", coords: [39.074208, 21.824312], icon: greeceIcon },
   { name: "Portugal", coords: [39.399872, -8.224454], icon: portugalIcon },
   { name: "Egypt", coords: [26.8206, 30.8025], icon: egyptIcon },
+  { name: "Jordan", coords: [31.2400, 36.5100], icon: jordanIcon },
+  { name: "Kazakhstan", coords: [48.0196, 66.9237], icon: kazakhstanIcon },
 ];
